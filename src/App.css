@@ -1,38 +1,225 @@
-.App {
-  text-align: center;
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  color: #303030;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.page-wrapper {
+  height: 80vh;
+  width: 60vw;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.project-container {
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.projects-list {
+  list-style: none;
+}
+
+.project-item {
+  width: 100%;
+  padding: 5vh 0;
+}
+
+.project-item:first-child {
+  margin-top: 5vh;
+}
+
+.project-item:last-child {
+  margin-bottom: 10vh;
+}
+
+.project-item_wrapper {
+  display: flex;
+}
+
+.project-item_img {
+  width: 60%;
+  padding: 3em;
+  background-color: #f8f8f8;
+  object-fit: scale-down;
+}
+
+.project-item_content {
+  padding: 0 0 0 5vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-item_title {
+  margin-bottom: 2vmin;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.project-item_type {
+  margin-bottom: 0.5em;
+  color: #7d7d7d;
+}
+
+.project-item_info {
+  margin-bottom: 1em;
+}
+
+.project-item_btn-wrapper {
+  display: flex;
+  margin-top: 2em;
+}
+
+.btn_project {
+  display: block;
+  margin-right: 1em;
+  padding: 12px 20px;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 700;
+  color: #333;
+  background-color: #ffce34;
+  cursor: pointer;
+  outline: 0;
+}
+
+.btn_project:last-child {
+  margin-right: 0;
+}
+
+.btn_project:hover,
+.btn_project:focus {
+  background-color: #ffce34;
+  box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.75);
+  transition: 0.2s ease-in-out;
+}
+
+.btn_project-ghost {
+  color: #ffce34;
+  background-color: #303030;
+}
+
+.btn_project-ghost:hover,
+.btn_project-ghost:focus {
+  background-color: #303030;
+}
+
+.home-page-title {
+  margin-bottom: 2vmin;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.page-title {
+  margin-bottom: 2vmin;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.page-description {
+  margin-bottom: 5vmin;
+  font-family: inherit;
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.nav {
+  width: 50%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1em;
+}
+
+.nav-links a {
+  padding: 5px;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: #ffb819;
+  transition: ease-in-out 0.3s;
+}
+
+.nav-links .current {
+  color: #ffce34;
+}
+
+.btn_about {
+  display: block;
+  padding: 12px 20px;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 700;
+  color: #333;
+  background-color: #ffce34;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+
+.btn_about:hover,
+.btn_about:focus {
+  /* background-color: #fac32f; */
+  box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.75);
+  transition: 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 900px) {
+  .nav {
+    width: 60%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    width: 70%;
+  }
+
+  .project-item_wrapper {
+    flex-direction: column;
+  }
+
+  .project-item_img {
+    width: 100%;
+    margin-bottom: 2vmin;
   }
 }
