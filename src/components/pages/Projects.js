@@ -13,6 +13,7 @@ const Projects = ({ projectList, projects }) => {
 };
 
 const ProjectsWrapper = styled.div`
+  margin-bottom: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

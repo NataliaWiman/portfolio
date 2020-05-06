@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { NavStyled, NavList, NavItem } from "./NavLinksStyled";
 
-const NavLinks = props => {
+const NavLinks = (props) => {
   const { navLinks } = props;
-  const nav = navLinks.map(item => {
+  const nav = navLinks.map((item) => {
     return (
-      <li key={item.id}>
+      <NavItem key={item.id}>
         <Link to={item.path}>{item.title}</Link>
-      </li>
+      </NavItem>
     );
   });
   return (
-    <nav className="nav">
-      <ul className="nav-links">{nav}</ul>
-    </nav>
+    <NavStyled>
+      <NavList>{nav}</NavList>
+    </NavStyled>
   );
 };
 

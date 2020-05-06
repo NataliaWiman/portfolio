@@ -1,47 +1,43 @@
 import React from "react";
-import styled from "styled-components";
 import { StyledA } from "../styled/Button";
+import * as Project from "./ProjectsStyled";
 
-const ProjectItem = props => {
+const ProjectItem = (props) => {
   const { projectList } = props;
-  const projects = projectList.map(item => {
+  const projects = projectList.map((item) => {
     return (
-      <li className="project-item" key={item.id}>
-        <div className="project-item_wrapper">
+      <Project.Item key={item.id}>
+        <Project.ItemWrapper>
           {item.img}
-          <div className="project-item_content">
-            <p className="project-item_type">{item.type}</p>
-            <h3 className="project-item_title">{item.title}</h3>
-            <p className="project-item_info">
+          <Project.ItemContent>
+            <Project.ItemType>{item.type}</Project.ItemType>
+            <Project.ItemTitle>{item.title}</Project.ItemTitle>
+            <Project.ItemInfo>
               <b>Description: </b>
               {item.description}
-            </p>
-            <p className="project-item_info">
+            </Project.ItemInfo>
+            <Project.ItemInfo>
               <b>My role: </b>
               {item.role}
-            </p>
-            <p className="project-item_info">
+            </Project.ItemInfo>
+            <Project.ItemInfo>
               <b>Technologies used: </b>
               {item.technologies}
-            </p>
+            </Project.ItemInfo>
             <div className="project-item_btn-wrapper">
-              <StyledAEdited href="/" about="blank">
+              <Project.StyledAEdited href="/" about="blank">
                 Preview
-              </StyledAEdited>
+              </Project.StyledAEdited>
               <StyledA href="/" about="blank" primary>
                 Source Code
               </StyledA>
             </div>
-          </div>
-        </div>
-      </li>
+          </Project.ItemContent>
+        </Project.ItemWrapper>
+      </Project.Item>
     );
   });
-  return <ul className="projects-list">{projects}</ul>;
+  return <Project.List>{projects}</Project.List>;
 };
-
-const StyledAEdited = styled(StyledA)`
-  margin-right: 10px;
-`;
 
 export default ProjectItem;

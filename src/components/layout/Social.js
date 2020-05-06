@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const Social = props => {
+const Social = (props) => {
   const { socialLinks } = props;
-  const social = socialLinks.map(item => {
+  const social = socialLinks.map((item) => {
     return (
       <ListItem key={item.id}>
         <StyledLink href={item.path} title={item.title} target="_blank">
@@ -16,10 +16,6 @@ const Social = props => {
 };
 
 const List = styled.ul`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   list-style: none;
   display: flex;
   justify-content: space-between;

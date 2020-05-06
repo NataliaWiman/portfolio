@@ -1,26 +1,16 @@
 import React from "react";
 import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { LogoStyled, LogoImage } from "./LogoStyled";
 
 const Logo = () => {
   return (
     <Link to="/">
-      <LogoWrapper>
+      <LogoStyled>
         <LogoImage src={logo} alt="logo"></LogoImage>
-      </LogoWrapper>
+      </LogoStyled>
     </Link>
   );
 };
-
-const LogoWrapper = styled.div`
-  width: 50px;
-  display: flex;
-  cursor: pointer;
-`;
-
-const LogoImage = styled.img`
-  height: 50px;
-`;
 
 export default Logo;

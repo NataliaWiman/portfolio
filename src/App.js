@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./global";
+import { theme } from "./theme";
 import Navigation from "./components/layout/Navigation";
 import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
@@ -21,31 +24,31 @@ class App extends Component {
       { title: "Projects", path: "/projects", id: 2 },
       { title: "CV", path: "/resume", id: 3 },
       { title: "About", path: "/about", id: 4 },
-      { title: "Contact", path: "/contact", id: 5 }
+      { title: "Contact", path: "/contact", id: 5 },
     ],
     socialLinks: [
       {
         title: "GitHub",
         icon: <i className="fab fa-github"></i>,
         path: "https://github.com/NataliaWiman",
-        id: 1
+        id: 1,
       },
       {
         title: "LinkedIn",
         icon: <i className="fab fa-linkedin"></i>,
         path: "https://www.linkedin.com/in/natalia-wiman-178b68189/",
-        id: 2
-      }
+        id: 2,
+      },
     ],
     home: {
       greeting: "Hi! I'm Natalia",
       description: "A Front-End Developer from Stockholm.",
-      button: "View Projects"
+      button: "View Projects",
     },
     about: {
       title: "About me",
       description:
-        "I live in Stockholm and have been studying Front-end Development in KYH since fall 2019. It can be challenging at times but the most inspiring thing for me is to look back and realise how much I’ve learned and how much there is yet to explore. Having fun in the process is a pretty good bonus!"
+        "I live in Stockholm and have been studying Front-end Development in KYH since fall 2019. It can be challenging at times but the most inspiring thing for me is to look back and realise how much I’ve learned and how much there is yet to explore. Having fun in the process is a pretty good bonus!",
     },
     skills: [
       { title: "HTML5", icon: <i className="fab fa-html5"></i>, id: 1 },
@@ -53,21 +56,21 @@ class App extends Component {
       {
         title: "JavaScript",
         icon: <i className="fab fa-js-square"></i>,
-        id: 3
+        id: 3,
       },
-      { title: "React", icon: <i className="fab fa-react"></i>, id: 4 }
+      { title: "React", icon: <i className="fab fa-react"></i>, id: 4 },
     ],
     projects: {
       title: "My Projects",
-      description: "Here are a few of my projects"
+      description: "Here are a few of my projects",
     },
     cv: {
       title: "My CV",
-      description: "Here you can download my CV"
+      description: "Here you can download my CV",
     },
     contact: {
       title: "Get in touch",
-      description: "Contact me if there's anything you are wondering"
+      description: "Contact me if there's anything you are wondering",
     },
     projectList: [
       {
@@ -82,7 +85,7 @@ class App extends Component {
         code: "https://facebook.github.io/react/",
         role: "Design and code a responsive website with a form.",
         technologies: "HTML, CSS, JavaScript",
-        id: 1
+        id: 1,
       },
       {
         title: "Quire",
@@ -96,7 +99,7 @@ class App extends Component {
         code: "https://facebook.github.io/react/",
         role: "Design and code a note taking web application.",
         technologies: "HTML, CSS, JavaScript, QuillJS",
-        id: 2
+        id: 2,
       },
       {
         title: "Cake Shop",
@@ -110,48 +113,54 @@ class App extends Component {
         code: "https://facebook.github.io/react/",
         role: "Make a website.",
         technologies: "HTML, CSS, JavaScript",
-        id: 3
-      }
-    ]
+        id: 3,
+      },
+    ],
   };
   render() {
     return (
-      <Router>
-        <Container>
-          <Navigation navLinks={this.state.navLinks} />
-          <Route
-            path="/"
-            exact
-            component={() => (
-              <Home
-                home={this.state.home}
-                socialLinks={this.state.socialLinks}
-              />
-            )}
-          />
-          <Route
-            path="/about"
-            component={() => (
-              <About about={this.state.about} skillsList={this.state.skills} />
-            )}
-          />
-          <Route
-            path="/projects"
-            component={() => (
-              <Projects
-                projects={this.state.projects}
-                projectList={this.state.projectList}
-              />
-            )}
-          />
-          <Route path="/resume" component={() => <CV cv={this.state.cv} />} />
-          <Route
-            path="/contact"
-            component={() => <Contact contact={this.state.contact} />}
-          />
-          <Footer socialLinks={this.state.socialLinks} />
-        </Container>
-      </Router>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Router>
+          <Container>
+            <Navigation navLinks={this.state.navLinks} />
+            <Route
+              path="/"
+              exact
+              component={() => (
+                <Home
+                  home={this.state.home}
+                  socialLinks={this.state.socialLinks}
+                />
+              )}
+            />
+            <Route
+              path="/about"
+              component={() => (
+                <About
+                  about={this.state.about}
+                  skillsList={this.state.skills}
+                />
+              )}
+            />
+            <Route
+              path="/projects"
+              component={() => (
+                <Projects
+                  projects={this.state.projects}
+                  projectList={this.state.projectList}
+                />
+              )}
+            />
+            <Route path="/resume" component={() => <CV cv={this.state.cv} />} />
+            <Route
+              path="/contact"
+              component={() => <Contact contact={this.state.contact} />}
+            />
+            <Footer socialLinks={this.state.socialLinks} />
+          </Container>
+        </Router>
+      </ThemeProvider>
     );
   }
 }
