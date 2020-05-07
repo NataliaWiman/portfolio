@@ -14,6 +14,7 @@ export const FooterStyled = styled.div`
   border-top: 1px solid #f6f6f6;
 
   @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+    position: unset;
     padding: ${({ theme }) => theme.paddingMobile};
   }
 `;
