@@ -7,7 +7,7 @@ import { PageText } from "../styled/Text";
 
 const About = ({ about, skillsList }) => {
   return (
-    <PageWrapper>
+    <AboutWrapper>
       <PageTitle>{about.title}</PageTitle>
       <PageText>{about.description}</PageText>
 
@@ -15,12 +15,20 @@ const About = ({ about, skillsList }) => {
         <h3>Skills</h3>
       </TitleWrapper>
       <Skills skillsList={skillsList} />
-    </PageWrapper>
+    </AboutWrapper>
   );
 };
 
+const AboutWrapper = styled(PageWrapper)`
+  width: 40vw;
+
+  @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+    width: 60vw;
+  }
+`;
+
 const TitleWrapper = styled.div`
-  margin-bottom: 3vmin;
+  margin-bottom: 0;
 `;
 
 export default About;

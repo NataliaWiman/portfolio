@@ -13,8 +13,14 @@ export const StyledButton = styled.button`
   cursor: pointer;
   outline: 0;
 
-  background: ${props => (props.primary ? "#303030" : "#ffce34")};
-  color: ${props => (props.primary ? "#ffce34" : "#303030")};
+  background: ${(props) =>
+    props.primary
+      ? ({ theme }) => theme.primaryDark
+      : ({ theme }) => theme.primaryAccent};
+  color: ${(props) =>
+    props.primary
+      ? ({ theme }) => theme.primaryAccent
+      : ({ theme }) => theme.primaryDark};
 
   &:hover,
   &:focus {
@@ -36,8 +42,14 @@ export const StyledA = styled.a`
   cursor: pointer;
   outline: 0;
 
-  background: ${props => (props.primary ? "#303030" : "#ffce34")};
-  color: ${props => (props.primary ? "#ffce34" : "#303030")};
+  background: ${(props) =>
+    props.primary
+      ? ({ theme }) => theme.primaryDark
+      : ({ theme }) => theme.primaryAccent};
+  color: ${(props) =>
+    props.primary
+      ? ({ theme }) => theme.primaryAccent
+      : ({ theme }) => theme.primaryDark};
 
   &:hover,
   &:focus {

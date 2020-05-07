@@ -9,9 +9,7 @@ const CV = ({ cv }) => {
     <PageWrapper>
       <PageTitle>{cv.title}</PageTitle>
       <PageText>{cv.description}</PageText>
-      <StyledA href="/" target="_blank">
-        Download CV
-      </StyledA>
+      <StyledA>{cv.dl}</StyledA>
     </PageWrapper>
   );
 };

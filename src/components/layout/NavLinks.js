@@ -1,21 +1,27 @@
 import React from "react";
+import { bool } from "prop-types";
 import { Link } from "react-router-dom";
 import { NavStyled, NavList, NavItem } from "./NavLinksStyled";
 
-const NavLinks = (props) => {
-  const { navLinks } = props;
+const NavLinks = ({ navLinks, open, setOpen }) => {
   const nav = navLinks.map((item) => {
     return (
-      <NavItem key={item.id}>
-        <Link to={item.path}>{item.title}</Link>
+      <NavItem open={open} key={item.id}>
+        <Link onClick={() => setOpen(!open)} to={item.path}>
+          {item.title}
+        </Link>
       </NavItem>
     );
   });
   return (
-    <NavStyled>
-      <NavList>{nav}</NavList>
+    <NavStyled open={open}>
+      <NavList open={open}>{nav}</NavList>
     </NavStyled>
   );
+};
+
+NavLinks.propTypes = {
+  open: bool.isRequired,
 };
 
 export default NavLinks;

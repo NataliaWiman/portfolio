@@ -24,14 +24,14 @@ const ProjectItem = (props) => {
               <b>Technologies used: </b>
               {item.technologies}
             </Project.ItemInfo>
-            <div className="project-item_btn-wrapper">
-              <Project.StyledAEdited href="/" about="blank">
+            <Project.ButtonWrapper>
+              <Project.StyledAEdited href={item.url} target="_blanc">
                 Preview
               </Project.StyledAEdited>
-              <StyledA href="/" about="blank" primary>
-                Source Code
+              <StyledA href={item.code} target="_blanc" primary>
+                Source&nbsp;Code
               </StyledA>
-            </div>
+            </Project.ButtonWrapper>
           </Project.ItemContent>
         </Project.ItemWrapper>
       </Project.Item>

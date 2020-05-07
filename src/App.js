@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import project1 from "./components/img/project1.jpg";
 import project2 from "./components/img/project2.jpg";
 import project3 from "./components/img/project3.jpg";
+import dlcv from "./assets/CV_NataliaWiman.pdf";
 import styled from "styled-components";
 
 class App extends Component {
@@ -23,7 +24,7 @@ class App extends Component {
       { title: "Home", path: "/", id: 1 },
       { title: "Projects", path: "/projects", id: 2 },
       { title: "CV", path: "/resume", id: 3 },
-      { title: "About", path: "/about", id: 4 },
+      { title: "About me", path: "/about", id: 4 },
       { title: "Contact", path: "/contact", id: 5 },
     ],
     socialLinks: [
@@ -48,7 +49,7 @@ class App extends Component {
     about: {
       title: "About me",
       description:
-        "I live in Stockholm and have been studying Front-end Development in KYH since fall 2019. It can be challenging at times but the most inspiring thing for me is to look back and realise how much I’ve learned and how much there is yet to explore. Having fun in the process is a pretty good bonus!",
+        "Hi. I'm Natalia. I live in Stockholm and have been studying Front-end Development in since fall 2019. It can be challenging at times but the most inspiring thing for me is to look back and realise how much I’ve learned and how much there is yet to explore. Having fun in the process is a pretty good bonus!",
     },
     skills: [
       { title: "HTML5", icon: <i className="fab fa-html5"></i>, id: 1 },
@@ -67,12 +68,32 @@ class App extends Component {
     cv: {
       title: "My CV",
       description: "Here you can download my CV",
+      dl: (
+        <a href={dlcv} target="_blanc">
+          Download CV
+        </a>
+      ),
     },
     contact: {
       title: "Get in touch",
       description: "Contact me if there's anything you are wondering",
     },
     projectList: [
+      {
+        title: "Quire",
+        description:
+          "Quire is an online note taking application that lets you create, view, and manage notes. This web app is fully responsive.",
+        type: "Web Application",
+        img: (
+          <img className="project-item_img" src={project2} alt={this.title} />
+        ),
+        url: "http://quire-team-staple.surge.sh",
+        code: "https://github.com/AD757/fe19tp1_TeamStaple",
+        role:
+          "As a memeber of a team of five students I was resposible for design, mark-up, and did most of the application's functionality.",
+        technologies: "HTML, CSS, JavaScript, QuillJS, Local Storage",
+        id: 1,
+      },
       {
         title: "Coffee Bean",
         description:
@@ -81,39 +102,12 @@ class App extends Component {
         img: (
           <img className="project-item_img" src={project1} alt={this.title} />
         ),
-        url: "https://facebook.github.io/react/",
-        code: "https://facebook.github.io/react/",
-        role: "Design and code a responsive website with a form.",
+        url: "http://fe19ip1-coffee-bean.surge.sh",
+        code: "https://github.com/NataliaWiman/fe19ip1_coffeebean",
+        role:
+          "Design and create a responsive website with a form from scratch.",
         technologies: "HTML, CSS, JavaScript",
-        id: 1,
-      },
-      {
-        title: "Quire",
-        description:
-          "Quire is an online note taking application that lets you create, view, and manage notes in the desktop or on tablet and mobile devices.",
-        type: "Web Application",
-        img: (
-          <img className="project-item_img" src={project2} alt={this.title} />
-        ),
-        url: "https://facebook.github.io/react/",
-        code: "https://facebook.github.io/react/",
-        role: "Design and code a note taking web application.",
-        technologies: "HTML, CSS, JavaScript, QuillJS",
         id: 2,
-      },
-      {
-        title: "Cake Shop",
-        description:
-          "Cake Shop is an imaginary online web-shop for all things tasty.",
-        type: "Website",
-        img: (
-          <img className="project-item_img" src={project3} alt={this.title} />
-        ),
-        url: "https://facebook.github.io/react/",
-        code: "https://facebook.github.io/react/",
-        role: "Make a website.",
-        technologies: "HTML, CSS, JavaScript",
-        id: 3,
       },
     ],
   };
@@ -149,6 +143,7 @@ class App extends Component {
                 <Projects
                   projects={this.state.projects}
                   projectList={this.state.projectList}
+                  socialLinks={this.state.socialLinks}
                 />
               )}
             />
@@ -166,9 +161,7 @@ class App extends Component {
 }
 
 const Container = styled.div`
-  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 1rem;
 `;
 
 export default App;

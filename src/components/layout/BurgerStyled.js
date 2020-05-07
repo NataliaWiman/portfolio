@@ -5,17 +5,12 @@ export const BurgerWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media screen and (max-width: ${({ theme }) => theme.mobile}) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 `;
 
 export const BurgerStyled = styled.div`
   display: flex;
   width: 30px;
+  height: 27px;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
@@ -23,10 +18,6 @@ export const BurgerStyled = styled.div`
   align-self: flex-start;
   cursor: pointer;
   z-index: 100;
-
-  @media screen and (max-width: ${({ theme }) => theme.mobile}) {
-    display: flex;
-  }
 
   :hover span {
     background-color: ${({ theme }) => theme.primaryDark};
@@ -39,7 +30,7 @@ export const BurgerStyled = styled.div`
     height: 3px;
     margin: 2px 0;
     background: ${({ open, theme }) =>
-      open ? theme.secondaryLight : theme.primaryDark};
+      open ? theme.primaryDark : theme.primaryDark};
     border-radius: 3px;
     transition: background 800ms;
     animation-duration: 800ms;
