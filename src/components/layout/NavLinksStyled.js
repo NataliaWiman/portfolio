@@ -39,7 +39,6 @@ export const NavList = styled.ul`
   font-size: 2em;
 
   a {
-    padding-bottom: 5px;
     font-weight: ${({ theme }) => theme.fontBold};
 
     :hover {
@@ -68,7 +67,7 @@ export const NavList = styled.ul`
 `; */
 
 export const NavItem = styled.li`
-  margin-bottom: 3vmin;
+  margin-bottom: 4vmin;
   opacity: ${({ open }) => (open ? "1" : "0")};
   transform: ${({ open }) => (open ? "translateY(0)" : "translateY(5rem)")};
   transition: all 600ms ease-in-out;

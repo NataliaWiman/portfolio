@@ -8,12 +8,9 @@ import Blob from "../layout/Blob";
 const Home = ({ home }) => {
   return (
     <PageWrapper>
-      <Blob />
       <PageTitle>{home.greeting}</PageTitle>
       <PageText>{home.description}</PageText>
-      <StyledA primary href="/projects">
-        View Projects
-      </StyledA>
+      <StyledA href="/projects">View Projects</StyledA>
     </PageWrapper>
   );
 };

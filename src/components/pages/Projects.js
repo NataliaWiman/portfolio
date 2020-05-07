@@ -23,6 +23,10 @@ const ProjectsWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+    padding-bottom: 10vh;
+  }
 `;
 
 const GitHubLink = styled(StyledA)`
@@ -31,8 +35,7 @@ const GitHubLink = styled(StyledA)`
   box-shadow: none;
 
   :hover {
-    background-color: ${({ theme }) => theme.primaryDark};
-    color: ${({ theme }) => theme.primaryAccent};
+    background-color: ${({ theme }) => theme.primaryAccent};
     box-shadow: none;
   }
 `;
