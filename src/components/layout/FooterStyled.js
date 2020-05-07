@@ -4,7 +4,7 @@ export const FooterStyled = styled.div`
   position: fixed;
   bottom: 0;
   min-height: 10vh;
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
   padding: ${({ theme }) => theme.paddingMain};
   display: flex;

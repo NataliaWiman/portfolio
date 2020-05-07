@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const BlobStyled = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   margin-top: 10vh;
-  z-index: -1;
+  z-index: -10;
 
   :before {
     content: "";

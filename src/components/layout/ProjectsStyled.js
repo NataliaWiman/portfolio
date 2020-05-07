@@ -71,6 +71,10 @@ export const ItemType = styled.p`
 export const ButtonWrapper = styled.div`
   display: flex;
   margin-top: 2vmin;
+
+  @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+    margin-top: 10vmin;
+  }
 `;
 
 export const Image = styled.img`
